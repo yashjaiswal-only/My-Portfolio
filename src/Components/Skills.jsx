@@ -15,6 +15,7 @@ const Wrapper=styled.div`
 `
 const Title=styled.h1`
     font-size:4rem;
+    margin:2rem 0 ;
 
 `
 const Skill=styled.div`
@@ -29,6 +30,7 @@ const Skill=styled.div`
     align-items: center;
     justify-content: center;
     transition:transform 0.5s;
+    cursor:pointer;
     &:hover{
         transform:scale(1.2);
     }
@@ -64,7 +66,7 @@ const Layer=styled.div`
     left:0;
     bottom:0;
     overflow:hidden;
-    transition:height 0.5s;
+    transition:height 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +78,7 @@ const List=styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* flex-wrap:wrap; */
+    flex-wrap:wrap;
     
 `
 const ListItems=styled.div`

@@ -2,7 +2,7 @@ import React from 'react'
 import {init} from 'ityped'
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components'
-import Cover from '../Image/cover.jpg'
+// import Cover from '../Image/cover.jpg'
 import {mobile} from './mobile'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -12,9 +12,7 @@ const Container=styled.div`
   width:100%;
   height:100vh;
   overflow:hidden;
-  /* background-image:url(${Cover}); */
   background-size:cover;
-  /* position:fixed; */
   z-index:0;
   ${mobile({
       // display:"none"
@@ -179,7 +177,7 @@ const Home = () => {
     return (
     <Container id="home">
       <Navbar>
-        <Logo><Image src={logo}/></Logo>
+        <Logo><Image /></Logo>
         <List  
         style={{right:`${menuActive?0:-200}px`}}>
           <ListItem><a href="#home">Home</a></ListItem>
@@ -191,7 +189,6 @@ const Home = () => {
         </List>
         <Menu onClick={()=>setMenuActive(true)}><MenuIcon  className='mobile'/></Menu>
       </Navbar>
-
       <Wrapper>
         <Intro>
 
@@ -203,7 +200,7 @@ const Home = () => {
         </Intro>
       </Wrapper>
 
-      <Arrow><KeyboardArrowDownIcon sx={{color:'white',fontSize:'4rem'}}/></Arrow>
+      <a href="#about"><Arrow><KeyboardArrowDownIcon sx={{color:'white',fontSize:'4rem'}}/></Arrow></a>
     </Container>
   )
 }

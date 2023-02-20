@@ -2,3 +2,113 @@ a{
   color:inherit !important;
   text-decoration: none !important;
 }
+/* import Cover from './Image/cover2.webp' */
+
+.parallax {
+  /* The image used */
+  background-image: url('../src/Image/cover.png');
+  filter:brightness(80%);
+  object-fit:cover;
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.githubContainer {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.githubTitle {
+  font-size: 50px;
+  color: #333;
+}
+
+.githubChart {
+  width: 820px;
+  text-align: center;
+}
+
+.dates {
+  padding: 10px;
+  color: #555;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.box {
+  width: 15px;
+  height: 15px;
+  background-color: #171c25;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 1s all ease;
+}
+
+.active:nth-child(4n+1) {
+  background-color: #195b2c;
+}
+
+.githubChart:hover .active:nth-child(2n+1){
+  background-color: #78eb9a;
+}
+.githubChart:hover .active:nth-child(2n){
+  background-color: #0aaa52;
+}
+
+.githubSm{
+  display: none;
+}
+/* 
+@media screen and (max-width:1024px) {
+
+  .projects{
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .project{
+    flex-direction: column;
+    height: max-content;
+  }
+  .project:nth-child(2n){
+    flex-direction: column;
+  }
+
+  .phone,.laptop{
+    transform: none !important;
+  }
+  
+  .githubChart{
+    display: none;
+  }
+
+  .githubTitle{
+    text-align: center;
+    font-size: 10vw;
+  }
+
+  .githubSm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color:#555;
+    font-size: 30px;
+    text-align: center;
+  }
+} */

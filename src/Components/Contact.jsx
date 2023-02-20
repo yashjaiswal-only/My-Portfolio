@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import {mobile} from './mobile'
 import TelegramIcon from '@mui/icons-material/Telegram';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-import SocialIcons from './SocialIcons';
 
 // ${mobile({
 const Container=styled.div`
