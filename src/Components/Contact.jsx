@@ -21,6 +21,9 @@ const Left=styled.div`
     justify-content: space-around;
     >h1{
       font-size:2.6rem;
+      ${mobile({
+        fontSize:'30px',
+      })}
     }
     >div{
       display: flex;
@@ -28,11 +31,13 @@ const Left=styled.div`
       >p{
           margin:1rem;
           font-size:1.5rem;
+          ${mobile({
+            fontSize:'1rem',
+          })}
       }
       
     }
 `
-// const SocialIcons=styled.div``
 const Right=styled.div`
   flex-basis:60%;
     >form{
@@ -64,9 +69,13 @@ const Submit=styled.button`
   font-weight:600;
   font-size:1.5rem;
   padding:0.6rem 0;
+  outline:none;
   ${mobile({
-      // flexDirection:'column',
-      padding:'7px 20px'
+      width:'50%',
+      margin:'0',
+      padding:'0.2rem',
+      fontSize:'1.2rem',
+      borderRadius:'2px'
     })}
   `
 const Button=styled.button`
@@ -78,22 +87,31 @@ const Button=styled.button`
   color:white;
   font-weight:600;
   font-size:1.5rem;
-  >a{
-
-  }
+  outline:none;
+  ${mobile({
+    width:'50%',
+    margin:'0',
+    padding:'0.2rem',
+    fontSize:'1.2rem',
+    borderRadius:'2px'
+  })}
 `
 const Contact = () => {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwzbXuLxMm9zucxPq9QtboTLrionvPBCV5s7ZZGdW323thNF04nSjWe83WJY1FKNxw0_g/exec'
-  const form = document.forms['submit-to-google-sheet']  
-  const msg=document.getElementById('msg');
+  
   const onsubmit=(e)=>{
       e.preventDefault();
       console.log(e);
+      const form = document.forms['submit-to-google-sheet']  
+      const msg=document.getElementById('msg');
+      console.log(msg)
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => {
             msg.innerHTML="Messsge sent Successfully";
-            setTimeout(()=>msg.innerHTML="",5000)
+            setTimeout(()=>msg.innerHTML="",5000);
+            // for(let i=0;i<3;i++) e.target[0].value="";
+            form.reset();
           })
           .catch(error => console.error('Error!', error.message))
     }
@@ -117,7 +135,7 @@ const Contact = () => {
             
         <Submit>Submit</Submit>
         </form>
-        <span></span>
+        <span id='msg'></span>
       </Right>
     </Container>
   )

@@ -11,12 +11,16 @@ a{
   object-fit:cover;
   /* Full height */
   height: 100%; 
-
+  width:100%;
+  overflow:hidden;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width:600px){
+    /* background-image:none; */
+  }
 }
 .githubContainer {
   height: 60vh;
@@ -24,6 +28,7 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top:2rem;
 }
 
 .githubTitle {

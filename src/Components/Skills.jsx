@@ -4,19 +4,28 @@ import pl from '../Image/pl.jpg'
 import db from '../Image/db.jpg'
 import web from '../Image/web.jpg'
 import { Tooltip } from '@mui/material'
+import { mobile } from './mobile'
 const Container=styled.div`
     padding: 0 80px ;
-    
-    `
+    ${mobile({
+        padding:'20px'
+    })}
+`
 const Wrapper=styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding:20px 0;
+    ${mobile({
+        flexDirection:'column'
+    })}
 `
 const Title=styled.h1`
     font-size:4rem;
     margin:2rem 0 ;
-
+    ${mobile({
+        fontSize:'30px'
+    })}
 `
 const Skill=styled.div`
     background-color: white;
@@ -34,6 +43,11 @@ const Skill=styled.div`
     &:hover{
         transform:scale(1.2);
     }
+    ${mobile({
+       width:'90%',
+       height:'50vh',
+       margin:'2rem 0'
+    })}
 `
 const Span=styled.span`
     z-index:3;

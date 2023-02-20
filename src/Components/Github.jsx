@@ -2,9 +2,6 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 const Github = () => {
-    const boxContainer = document.querySelector(".boxContainer")
-console.log(boxContainer)
-
 
 useEffect(()=>{
     const boxContainer = document.querySelector(".boxContainer")
@@ -29,12 +26,13 @@ useEffect(()=>{
     el.classList = list.includes(i) ? "box active" : "box "
     boxContainer.appendChild(el)
     }
-
 },[])
+
   return (
     <div className="githubContainer">
         <h1 className="githubTitle">Want to see all projects?</h1>
         <div className="githubChart">
+        <a target="_blank" href="https://github.com/yashjaiswal-only">
           <div className="dates">
             <span>Jan</span>
             <span>Feb</span>
@@ -51,6 +49,7 @@ useEffect(()=>{
           </div>
           <div className="boxContainer"></div>
           <h1 className="githubTitle">ON GITHUB</h1>
+          </a>
         </div>
                 {/* <div className="githubSm">
                 <a href="">

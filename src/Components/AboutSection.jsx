@@ -10,23 +10,15 @@ const Container=styled.div`
     justify-content: space-between;
     flex-direction: column;
     padding:80px;
-    /* background-color: #fff; */
-
+    ${mobile({
+        padding:'20px'
+    })}
 `
 
 const Title=styled.span`
     font-size:60px;
     font-weight:600;
     color:white;
-    /* text-shadow: -1px 1px 0 #000,
-                          1px 1px 0 #000,
-                         1px -1px 0 #000,
-                        -1px -1px 0 #000; */
-    /* background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,#def9fa .89%,#bef3f5 17.23%,#9dedf0 42.04%,#7de7eb 55.12%,#5ce1e6 71.54%,#33bbcf 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent; */
     >p{
         width:80%;
     }
@@ -37,18 +29,26 @@ const Title=styled.span`
 `
 const Point=styled.div`
     display: flex;
-    /* margin:2rem 0; */
     align-items: center;
     position: relative;
-    /* background-color: yellow; */
-    `
+    ${mobile({
+        flexDirection:'column',
+        // flexDirection:`${props=>props.up=='up'?'column-reverse':'column'}`
+    })}
+`
 const Text=styled.div`
     width:50%;
     >p{
         font-size:1.2rem;
         color:rgb(209, 218, 250);
         color:white;
+        ${mobile({
+           fontSize:'0.8rem'
+        })}
     }
+    ${mobile({
+        width:'100%'
+    })}
 `
 const Show=styled.div`
     width:50%;
@@ -58,6 +58,9 @@ const Show=styled.div`
     >img{
         width:60%;
     }
+    ${mobile({
+        width:'100%'
+    })}
 `
 const TabTitle=styled.div`
     display: flex;
@@ -146,7 +149,7 @@ const AboutSection = () => {
   return (
     <Container id='about'>
     <Title>About Me</Title>
-    <Point>
+    <Point up="up">
         <div  style={{height:'100%',width:'30%',position:'absolute',right:'0',background: 'linear-gradient(90deg,#f4c4f3 0%,#fc67fa 100%)',filter:'blur(250px)',zIndex:'0'}}/>
         <Text>
 
@@ -173,6 +176,8 @@ const AboutSection = () => {
         </p>
         </Text>
     </Point>
+
+{/* 
     <TabTitle>
         <TabLinks myIdx="1" activeIdx={index} onClick={()=>setIndex('1')}>Graduation</TabLinks>
         <TabLinks myIdx="2" activeIdx={index} onClick={()=>setIndex('2')}>High School</TabLinks>
@@ -204,7 +209,7 @@ const AboutSection = () => {
         <Item><span>CGPA : </span>9.2</Item>
         <Item><span>Board : </span>CBSE</Item>
     </TabContent>
-    </Cards>
+    </Cards> */}
 
     </Container>
   )

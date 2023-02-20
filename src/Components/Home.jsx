@@ -27,9 +27,9 @@ const Navbar=styled.div`
   flex-wrap:wrap;
   /* padding:10px 10px; */
   ${mobile({
-    
+    margin:'10px 0'
 
-    })}
+  })}
 
 `
 const Close=styled.div`
@@ -60,26 +60,24 @@ const List=styled.ul`
   transition:right 0.5s;
   height:90%;
   z-index:2;
-  width:60%;
+  width:100%;
   ${mobile({
-    background:"#ff004f",
-    position:'fixed',
-    top:'0',
-    // right:'0',
-    // right:`${props=>props.menuActive?0:-200}px`,
-    // right:`${props=>props.right}+"px"`,
-    width:'200px',
-    height:'100vh',
-    flexDirection:'column',
-    justifyContent:'space-evenly',
-    alignItems:'center'
+    // background:"#ff004f",
+    // position:'fixed',
+    // top:'0',
+    // // right:'0',
+    // // right:`${props=>props.menuActive?0:-200}px`,
+    // // right:`${props=>props.right}+"px"`,
+    // width:'200px',
+    // height:'100vh',
+    // flexDirection:'column',
+    // justifyContent:'space-evenly',
+    // alignItems:'center'
+    width:'100%'
   })}
   `
 const ListItem=styled.li`
-  text-shadow: -1px 1px 0 #000,
-                          1px 1px 0 #000,
-                         1px -1px 0 #000,
-                        -1px -1px 0 #000;
+  text-shadow: -1px 1px 0 #000,   1px 1px 0 #000,  1px -1px 0 #000, -1px -1px 0 #000;
   margin:0px 20px;
   position: relative;
   cursor:pointer;
@@ -99,8 +97,8 @@ const ListItem=styled.li`
     width:100%;
   }
   ${mobile({
-    // margin:'50px',
-    fontSize:'2rem'
+    margin:'0px',
+    fontSize:'1rem'
   })}
 `
 const Wrapper=styled.div`
@@ -112,7 +110,8 @@ const Wrapper=styled.div`
   align-items:left;
   justify-content: center;
   ${mobile({
-    marginLeft:'2rem'
+    marginLeft:'2rem',
+    width:'80%'
   })}
 `
 const Intro=styled.div`
@@ -143,6 +142,7 @@ const Intro=styled.div`
       }
     }
   }
+
 `
 const Arrow=styled.div`
   margin:0 auto;
@@ -177,7 +177,7 @@ const Home = () => {
     return (
     <Container id="home">
       <Navbar>
-        <Logo><Image /></Logo>
+        {/* <Logo><Image /></Logo> */}
         <List  
         style={{right:`${menuActive?0:-200}px`}}>
           <ListItem><a href="#home">Home</a></ListItem>
@@ -185,10 +185,11 @@ const Home = () => {
           <ListItem><a href="#skills">Skills</a></ListItem>
           <ListItem><a href="#work">Portfolio</a></ListItem>
           <ListItem><a href="#contact">Contact</a></ListItem>
-          <Close onClick={()=>setMenuActive(false)}><CloseIcon className='mobile' /></Close>
+          {/* <Close onClick={()=>setMenuActive(false)}><CloseIcon className='mobile' /></Close> */}
         </List>
-        <Menu onClick={()=>setMenuActive(true)}><MenuIcon  className='mobile'/></Menu>
+        {/* <Menu onClick={()=>setMenuActive(true)}><MenuIcon  className='mobile'/></Menu> */}
       </Navbar>
+
       <Wrapper>
         <Intro>
 

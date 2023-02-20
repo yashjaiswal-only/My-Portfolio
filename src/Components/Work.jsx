@@ -4,12 +4,20 @@ import fashify from '../Image/fashify f.png'
 import inotebook from '../Image/inotebook f.png'
 import hoobank from '../Image/hoobank f.png'
 import ProjectImg from './ProjectImg'
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Github from './Github'
+import { mobile } from './mobile'
 const Container=styled.div`
     padding:80px;
+    ${mobile({
+        padding:'20px'
+    })}
 `
 const Title=styled.h1`
     font-size:4rem;
+    ${mobile({
+        fontSize:'30px'
+    })}
 `
 const Project=styled.div`
     width:100%;
@@ -21,34 +29,55 @@ const Project=styled.div`
     align-items: center;
     color:white;
     color:${props=>props.theme?props.theme:'white'};
+    ${mobile({
+        flexDirection:'column-reverse',
+
+    })}
 `
 const Image=styled.div`
     width:50%;
     height:50vh;
     /* background-color: #fff; */
+    ${mobile({
+       width:'90%',
+       height:'30vh'
+    })}
 `
 const Content=styled.div`
     width:45%;
     display: flex;
     flex-direction: column;
-    
-    /* background-color: red; */
     height:80%;
+    ${mobile({
+       width:'90%',
+       marginTop:'1rem'
+    })}
 `
 
 const Name=styled.div`
     width:60%;
     font-size:2rem;
     font-weight:600;
+    ${mobile({
+       width:'100%',
+       fontSize:'1.5rem'
+    })}
 `
 const Description=styled.ul`
     margin:1rem 0;
     font-size:1.1rem;
-    color:white
+    color:white;
+    ${mobile({
+       width:'100%',
+       fontSize:'1rem'
+    })}
 `
 const ListItem=styled.li``
 const Buttons=styled.div`
     display: flex;
+    ${mobile({
+       justifyContent:'space-between'
+    })}
 `
 const SeeLive=styled.button`
     padding:0.2rem 0.6rem;
@@ -61,6 +90,11 @@ const SeeLive=styled.button`
     border-color:${props=>props.theme?props.theme:'white'};
     outline:none;
     cursor:pointer;
+    ${mobile({
+       width:'40%',
+    //    fontSize:'1rem',
+       padding:'0'
+    })}
 `
 const Code=styled.button`
     padding:0.6rem 1rem;
@@ -72,10 +106,37 @@ const Code=styled.button`
     color:inherit;
     cursor:pointer;
 `
+const View =styled.div`
+    max-width:100%; 
+    ${mobile({
+       display:'none'
+    })}
+`
+const ViewMobile =styled.div`
+    max-width:100%; 
+    margin-top:2rem;
+    display:none;
+    ${mobile({
+       display:'flex',
+       alignItem:'center',
+       justifyContent:'center'
+    })}
+    >a{
+        >svg{
+            margin:0 1rem;
+        }
+    }
+`
+const Hr=styled.hr`
+    border: 1px solid ;
+    border-color:${props=>props.theme?props.theme:'white'};
+    width:100%;
+`
 const Work = () => {
   return (
     <Container id="work" >
       <Title>My Work</Title>
+
       <Project theme={'#f1e564'}>
         <Content>
             <Name>Fashify Shop</Name>
@@ -100,7 +161,7 @@ const Work = () => {
         <ProjectImg image={fashify} theme={'#f1e564'}/>
         </Image>
       </Project>
-   
+        <Hr theme={'#f1e564'}/>
       <Project theme='#42d0b1'>
         <Content>
             <Name>Modern Banking app-UI/UX Design</Name>
@@ -121,9 +182,7 @@ const Work = () => {
         <ProjectImg theme={'#42d0b1'} image={hoobank}/>
         </Image>
       </Project>
-
-
-
+        <Hr theme='#42d0b1'/>
       <Project theme='#7edcff'>
         <Content>
             <Name>iNotebook</Name>
@@ -147,8 +206,13 @@ const Work = () => {
         <ProjectImg theme={'#7edcff'} image={inotebook}/>
         </Image>
       </Project>
+      <Hr theme='#7edcff'/>
 
-      <Github/>
+    <View><Github/></View>
+    <ViewMobile>
+        <h4 >Want to see all projects?</h4>
+        <a target="_blank" href="https://github.com/yashjaiswal-only"><GitHubIcon/></a>
+    </ViewMobile>
     </Container>
   )
 }

@@ -15,7 +15,7 @@ function App() {
     {/* <Parallax bgImage={Cover}  strength={600}>
         <Home/>
     </Parallax> */}
-    <div className="parallax">
+    <div className="parallax" >
       <Home/>
     </div>
     <AboutSection/>
