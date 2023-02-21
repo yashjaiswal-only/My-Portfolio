@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import pl from '../Image/pl.jpg'
 import db from '../Image/db.jpg'
 import web from '../Image/web.jpg'
-import { Tooltip } from '@mui/material'
 import { mobile } from './mobile'
 const Container=styled.div`
     padding: 0 80px ;
@@ -132,14 +131,14 @@ const Skills = () => {
             <Span id={1} hov={hov} >Programming</Span>
             <Layer id={1} hov={hov}>
                 <List>
-                    <Tooltip 
+                    {/* <Tooltip 
                     title={<span style={{color:'white',width:'100%'}}>Solved 600+ Questions on Various Platforms</span> }
-                   >
+                   > */}
                     <ListItems>
                         <Icon src="https://img.icons8.com/color/512/c-plus-plus-logo.png" alt='here'/>
                     C/C++
                     </ListItems>
-                    </Tooltip>
+                    {/* </Tooltip> */}
                     
                     <ListItems><Icon src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/512/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png" alt='here'/>Python</ListItems>
                     <ListItems><Icon src="https://img.icons8.com/color/512/javascript.png" alt='here'/>Javascript</ListItems>

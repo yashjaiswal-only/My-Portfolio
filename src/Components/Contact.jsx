@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {mobile} from './mobile'
-import TelegramIcon from '@mui/icons-material/Telegram';
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import SocialIcons from './SocialIcons.jsx';
 
 // ${mobile({
 const Container=styled.div`
@@ -13,6 +12,8 @@ const Container=styled.div`
       flexDirection:'column',
       padding:'30px'
     })}
+    /* background-color: #e3edf7; */
+
     `
 const Left=styled.div`
     flex-basis:35%;
@@ -117,12 +118,12 @@ const Contact = () => {
     }
 
   return (
+    <>
     <Container id="contact">
       <Left>
         <h1>Contact Me</h1>
-        <div><TelegramIcon sx={{color:'red'}}/><p><a href='mailto:yashjaiswalonly@gmail.com'>yashjaiswalonly@gmail.com</a></p></div>
-        <div><PhoneInTalkIcon sx={{color:'red'}}/><p><a href='tel:8130060493'>8130060493</a></p></div>
-        {/* <SocialIcons>        </SocialIcons> */}
+        <div><i className="fa-solid fa-envelope"/><p><a href='mailto:yashjaiswalonly@gmail.com'>yashjaiswalonly@gmail.com</a></p></div>
+        <div><i className="fa-solid fa-phone"></i><p><a href='tel:8130060493'>8130060493</a></p></div>
         <Button>
           <a target="_blank" href="https://drive.google.com/file/d/18drpXpbjTUCy9FOzWQFptdHANU5P89yM/view?usp=sharing" title="My Resume">Download CV</a>
         </Button>
@@ -137,7 +138,12 @@ const Contact = () => {
         </form>
         <span id='msg'></span>
       </Right>
+
     </Container>
+    <SocialIcons/>
+    </>
+
+
   )
 }
 

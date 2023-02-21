@@ -6,12 +6,13 @@ import Skills from './Components/Skills';
 import Work from './Components/Work';
 import Home from './Components/Home';
 import AboutSection from './Components/AboutSection';
+import { useEffect } from 'react';
 
 function App() {
-
-
   return (
     <>
+    <div id='progressbar'/>
+
     {/* <Parallax bgImage={Cover}  strength={600}>
         <Home/>
     </Parallax> */}

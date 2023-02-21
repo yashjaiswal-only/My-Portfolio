@@ -4,7 +4,6 @@ import fashify from '../Image/fashify f.png'
 import inotebook from '../Image/inotebook f.png'
 import hoobank from '../Image/hoobank f.png'
 import ProjectImg from './ProjectImg'
-import GitHubIcon from '@mui/icons-material/GitHub';
 import Github from './Github'
 import { mobile } from './mobile'
 const Container=styled.div`
@@ -122,7 +121,8 @@ const ViewMobile =styled.div`
        justifyContent:'center'
     })}
     >a{
-        >svg{
+        >i{
+            font-size:1.5rem;
             margin:0 1rem;
         }
     }
@@ -211,7 +211,7 @@ const Work = () => {
     <View><Github/></View>
     <ViewMobile>
         <h4 >Want to see all projects?</h4>
-        <a target="_blank" href="https://github.com/yashjaiswal-only"><GitHubIcon/></a>
+        <a target="_blank" href="https://github.com/yashjaiswal-only"><i className="fa-brands fa-github" /></a>
     </ViewMobile>
     </Container>
   )

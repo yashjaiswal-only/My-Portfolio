@@ -4,9 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components'
 // import Cover from '../Image/cover.jpg'
 import {mobile} from './mobile'
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import logo from '../Image/logo3.png'
 const Container=styled.div`
   width:100%;
@@ -158,6 +155,9 @@ const Arrow=styled.div`
         transform: translateY(0px);
       }
     }
+    >i{
+      font-size:3rem;
+    }
 `
 const Image=styled.img`
     width:20rem;
@@ -201,7 +201,7 @@ const Home = () => {
         </Intro>
       </Wrapper>
 
-      <a href="#about"><Arrow><KeyboardArrowDownIcon sx={{color:'white',fontSize:'4rem'}}/></Arrow></a>
+      <a href="#about"><Arrow><i className="fa-solid fa-chevron-down"></i></Arrow></a>
     </Container>
   )
 }
