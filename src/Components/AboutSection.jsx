@@ -31,9 +31,9 @@ const Point=styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    flex-direction:${props=>props.no=='second'?'row-reverse':'row'};
     ${mobile({
         flexDirection:'column',
-        // flexDirection:`${props=>props.up=='up'?'column-reverse':'column'}`
     })}
 `
 const Text=styled.div`
@@ -149,7 +149,7 @@ const AboutSection = () => {
   return (
     <Container id='about'>
     <Title>About Me</Title>
-    <Point up="up">
+    <Point no={"first"}>
         <div  style={{height:'100%',width:'30%',position:'absolute',right:'0',background: 'linear-gradient(90deg,#f4c4f3 0%,#fc67fa 100%)',filter:'blur(250px)',zIndex:'0'}}/>
         <Text>
 
@@ -163,11 +163,9 @@ const AboutSection = () => {
             <img src={codinggif}/>
         </Show>
     </Point>
-    <Point>
+    <Point no={'second'}>
     <div  style={{height:'100%',width:'40%',position:'absolute',top:'0',background: 'linear-gradient(180deg,rgba(188,165,255,0) 0%,#214d76 100%)',filter:'blur(120px)',zIndex:'0'}}/>
-        <Show>
-            <img src={codinggif2}/>
-        </Show>
+     
         <Text>
 
         <p>
@@ -175,6 +173,9 @@ const AboutSection = () => {
         Apart from technical things I also enjoy listening music and discovering different cultural art forms . 
         </p>
         </Text>
+        <Show>
+            <img src={codinggif2}/>
+        </Show>
     </Point>
 
 {/* 

@@ -36,6 +36,7 @@ const Project=styled.div`
 const Image=styled.div`
     width:50%;
     height:50vh;
+    max-height:max-content;
     /* background-color: #fff; */
     ${mobile({
        width:'90%',

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import {mobile} from './mobile'
 import SocialIcons from './SocialIcons.jsx';
@@ -71,6 +71,10 @@ const Submit=styled.button`
   font-size:1.5rem;
   padding:0.6rem 0;
   outline:none;
+  &:disabled{
+    color:#dccbcb;
+    cursor:not-allowed;
+  }
   ${mobile({
       width:'50%',
       margin:'0',
@@ -78,6 +82,7 @@ const Submit=styled.button`
       fontSize:'1.2rem',
       borderRadius:'2px'
     })}
+    
   `
 const Button=styled.button`
   cursor:pointer;
@@ -98,20 +103,23 @@ const Button=styled.button`
   })}
 `
 const Contact = () => {
+  const [sending,setSending]=useState(false);
+
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwzbXuLxMm9zucxPq9QtboTLrionvPBCV5s7ZZGdW323thNF04nSjWe83WJY1FKNxw0_g/exec'
   
   const onsubmit=(e)=>{
+      setSending(true);
       e.preventDefault();
       console.log(e);
-      const form = document.forms['submit-to-google-sheet']  
+      const form = document.forms['submit-to-google-sheet']
       const msg=document.getElementById('msg');
       console.log(msg)
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => {
             msg.innerHTML="Messsge sent Successfully";
+            setSending(false);
             setTimeout(()=>msg.innerHTML="",5000);
-            // for(let i=0;i<3;i++) e.target[0].value="";
             form.reset();
           })
           .catch(error => console.error('Error!', error.message))
@@ -134,7 +142,7 @@ const Contact = () => {
             <input type='email' name ="email" placeholder="Your Email" required />
             <textarea name="Message" rows="6" placeholder='Your Message'/>
             
-        <Submit>Submit</Submit>
+        <Submit disabled={sending}>{sending?'Sending':'Submit'}</Submit>
         </form>
         <span id='msg'></span>
       </Right>
